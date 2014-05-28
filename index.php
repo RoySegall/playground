@@ -2,6 +2,11 @@
 
 define('ROOT', getcwd());
 
+require_once 'core/Core.php';
+
+return;
+
+
 $core = new Core(ROOT . '/settings.php');
 if (!$core->entityExists('node')) {
   $core->registerEntity('Modules\node');

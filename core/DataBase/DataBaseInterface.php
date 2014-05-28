@@ -1,5 +1,5 @@
 <?php
-
+namespace Core\DataBase;
 Interface DataBaseInterface {
 
   public function connect($settings);

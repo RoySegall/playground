@@ -1,8 +1,9 @@
 <?php
 
 namespace Modules\node;
+use Core\Entity\EntityInfo;
 
-class info extends \EntityInfo {
+class info extends EntityInfo {
   public $type = 'node';
   public $keys = array(
     'id' => 'nid',

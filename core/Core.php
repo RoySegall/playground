@@ -2,6 +2,8 @@
 
 class Core {
 
+  protected $settings;
+
   public function __construct($path) {
 
     // Load file.
@@ -14,7 +16,8 @@ class Core {
 
   // All variables that used for settings will be store in static.
 
-  public function setVariable() {
+  public function setVariable($key, $value) {
+    $this->settings[$key] = $value;
   }
 
   public function getVariable() {
