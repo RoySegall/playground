@@ -5,7 +5,7 @@ namespace Core\DataBase\MySql;
 
 class MySql implements \Core\DataBase\DataBaseInterface {
 
-  public function connect($settings) {
+  public function __construct($settings) {
     // TODO: Implement connect() method.
   }
 

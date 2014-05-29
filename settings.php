@@ -5,24 +5,27 @@
  * settings.php
  *
  * This file will contain global settings about the current project.
+ *
+ * todo: Move to parent class.
  */
 
 class Settings {
-  protected static $settings;
-
-  private function __construct() {
-    self::$settings = array(
+  /**
+   * Return the settings of the class.
+   *
+   * @return array
+   */
+  public static function getSettings() {
+    return array(
       'db' => array(
-        'name' => 'playground',
-        'pass' => 'root',
-        'user' => 'root',
-        'host' => 'localhost',
-        'type' => 'Core\DataBase\MySql',
+        'info' => array(
+          'name' => 'playground',
+          'pass' => 'root',
+          'user' => 'root',
+          'host' => 'localhost',
+        ),
+        'type' => 'Core\DataBase\MySql\MySql',
       )
     );
-  }
-
-  public static function getSettings() {
-    return self::$settings;
   }
 }

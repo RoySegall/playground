@@ -1,8 +1,9 @@
 <?php
 namespace Core\DataBase;
+
 Interface DataBaseInterface {
 
-  public function connect($settings);
+  public function __construct($settings);
 
   public function setTable($table);
 

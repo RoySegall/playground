@@ -1,8 +1,26 @@
 <?php
 
+// Require needed files.
+require_once 'kint/Kint.class.php';
+
+/**
+ * Some how of autoloader.
+ */
+function __autoload($name) {
+  $file = str_replace("\\", "/", $name);
+  $file = ROOT . '/' . $file . '.php';
+
+  if (!file_exists($file)) {
+    return;
+  }
+
+  require_once $file;
+}
+
 class Core {
 
   protected $settings;
+  protected $db;
 
   public function __construct($path) {
 
@@ -13,7 +31,8 @@ class Core {
     $this->settings = Settings::getSettings();
 
     // Connect to DB.
-
+    $db = $this->settings['db'];
+    $this->db = new $db['type']($db['info']);
   }
 
   // All variables that used for settings will be store in static.
