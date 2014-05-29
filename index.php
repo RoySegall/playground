@@ -4,6 +4,10 @@ define('ROOT', getcwd());
 
 require_once 'core/Core.php';
 
+$core = new core(ROOT . '/settings.php');
+
+var_dump($core->getSettings());
+
 return;
 
 

@@ -7,8 +7,10 @@ class Core {
   public function __construct($path) {
 
     // Load file.
+    require_once $path;
 
     // Save settings.
+    $this->settings = Settings::getSettings();
 
     // Connect to DB.
 
@@ -16,11 +18,12 @@ class Core {
 
   // All variables that used for settings will be store in static.
 
-  public function setVariable($key, $value) {
+  public function setSettings($key, $value) {
     $this->settings[$key] = $value;
   }
 
-  public function getVariable() {
+  public function getSettings() {
+    return $this->settings;
   }
 
   /**
