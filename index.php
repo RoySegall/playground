@@ -8,8 +8,13 @@ $core = new core(ROOT . '/settings.php');
 $core->entity()->registerEntity('node', 'Modules\node');
 
 if (!$info = $core->entity()->entityInfo('node')) {
-
+  return;
 }
+
+if (!$core->db()->tableExists($info->baseTable)) {
+  $core->entity()->installSchema('node');
+}
+
 
 \core::debug($info);
 

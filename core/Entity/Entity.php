@@ -21,8 +21,14 @@ class Entity {
 
   /**
    * @param null $type
+   *
+   * @return \Core\Entity\EntityInfo
    */
   public function entityInfo($type = NULL) {
     return empty($type) ? $this->types : $this->types[$type];
+  }
+
+  public function installSchema($type) {
+
   }
 }

@@ -11,7 +11,7 @@ class MySql implements \Core\DataBase\DataBaseInterface {
   protected $db;
 
   public function __construct($settings) {
-    $this->db = new \PDO("mysql:host={$settings['host']};dbmame={$settings['name']}", $settings['user'], $settings['pass']);
+    $this->db = new \PDO('mysql:host=' . $settings['host'] . ';dbname=' . $settings['name'], $settings['user'], $settings['pass']);
   }
 
   public function setTable($table) {
@@ -40,6 +40,14 @@ class MySql implements \Core\DataBase\DataBaseInterface {
   }
 
   public function tableExists($table) {
-    return $this;
+    $stmt = $this->db->query('show tables');
+    $stmt->execute();
+    while($row = $stmt->fetch(\PDO::FETCH_OBJ)) {
+      if ($row->Tables_in_playground == $table) {
+        return TRUE;
+      }
+    }
+
+    return FALSE;
   }
 }
