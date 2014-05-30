@@ -2,7 +2,10 @@
 
 namespace Modules\node;
 
-class info extends \Core\Entity\EntityInfo {
+use Core\Entity\EntityInfo;
+
+class info extends EntityInfo {
+  public $label = 'Node';
   public $type = 'node';
   public $keys = array(
     'id' => 'nid',

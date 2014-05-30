@@ -2,8 +2,9 @@
 
 namespace Core\DataBase\MySql;
 
+use Core\DataBase\DataBaseInterface;
 
-class MySql implements \Core\DataBase\DataBaseInterface {
+class MySql implements DataBaseInterface {
 
   /**
    * @var \PDO

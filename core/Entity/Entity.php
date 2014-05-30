@@ -1,13 +1,15 @@
 <?php
 namespace Core\Entity;
 
+use Core\DataBase\DataBaseInterface;
+
 class Entity {
 
   protected $db;
 
   protected $types;
 
-  public function __construct(\Core\DataBase\DataBaseInterface $db) {
+  public function __construct(DataBaseInterface $db) {
     $this->db = $db;
   }
 
@@ -28,7 +30,8 @@ class Entity {
     return empty($type) ? $this->types : $this->types[$type];
   }
 
-  public function installSchema($type) {
+  public function installSchema(EntityInfo $type) {
+    \Core::debug($type->schema());
 
   }
 }

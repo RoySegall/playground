@@ -12,7 +12,7 @@ if (!$info = $core->entity()->entityInfo('node')) {
 }
 
 if (!$core->db()->tableExists($info->baseTable)) {
-  $core->entity()->installSchema('node');
+  $core->entity()->installSchema($info);
 }
 
 
