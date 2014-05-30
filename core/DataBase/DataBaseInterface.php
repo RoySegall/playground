@@ -15,7 +15,7 @@ Interface DataBaseInterface {
 
   public function range($start, $end);
 
-  public function execute();
+  public function execute($query);
 
   public function tableExists($table);
 }

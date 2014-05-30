@@ -1,15 +1,27 @@
 <?php
 namespace Core\Entity;
 
-Interface EntityFieldQueryInterface {
+use Core\Entity\EntityFieldQueryInterface;
 
-  public function type();
+class EntityFieldQuery implements EntityFieldQueryInterface {
 
-  public function condition();
+  public function type() {
+    // TODO: Implement type() method.
+  }
 
-  public function FieldCondition();
+  public function condition() {
+    // TODO: Implement condition() method.
+  }
 
-  public function range();
+  public function FieldCondition() {
+    // TODO: Implement FieldCondition() method.
+  }
 
-  public function execute();
+  public function range() {
+    // TODO: Implement range() method.
+  }
+
+  public function execute() {
+    // TODO: Implement execute() method.
+  }
 }

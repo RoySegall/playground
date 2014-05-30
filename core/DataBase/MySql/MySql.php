@@ -16,7 +16,6 @@ class MySql implements DataBaseInterface {
   }
 
   public function setTable($table) {
-
     return $this;
   }
 
@@ -36,8 +35,8 @@ class MySql implements DataBaseInterface {
     return $this;
   }
 
-  public function execute() {
-    return $this;
+  public function execute($query) {
+    return $this->db->exec($query);
   }
 
   public function tableExists($table) {

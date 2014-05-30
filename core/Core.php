@@ -34,6 +34,11 @@ class Core {
    */
   protected $entity;
 
+  /**
+   * @var \Core\Entity\EntityFieldQueryInterface
+   */
+  protected $entityFieldQuery;
+
   public function __construct($path) {
 
     // Load file.
@@ -47,6 +52,7 @@ class Core {
     $this->db = new $db['type']($db['info']);
 
     $this->entity = new Core\Entity\Entity($this->db);
+    $this->entityFieldQuery = new Core\Entity\EntityFieldQuery;
   }
 
   // All variables that used for settings will be store in static.
@@ -71,6 +77,13 @@ class Core {
    */
   public function entity() {
     return $this->entity;
+  }
+
+  /**
+   * @return \Core\Entity\EntityFieldQueryInterface
+   */
+  public function entityFieldQuery() {
+    return $this->entityFieldQuery;
   }
 
   public static function debug($debug) {
