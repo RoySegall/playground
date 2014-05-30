@@ -5,10 +5,17 @@ define('ROOT', getcwd());
 require_once 'core/Core.php';
 $core = new core(ROOT . '/settings.php');
 
+$core->entity()->registerEntity('node', 'Modules\node');
+
+if (!$info = $core->entity()->entityInfo('node')) {
+
+}
+
+\core::debug($info);
+
 return;
 
 
-$core = new Core(ROOT . '/settings.php');
 if (!$core->entityExists('node')) {
   $core->registerEntity('Modules\node');
 }

@@ -5,35 +5,41 @@ namespace Core\DataBase\MySql;
 
 class MySql implements \Core\DataBase\DataBaseInterface {
 
+  /**
+   * @var \PDO
+   */
+  protected $db;
+
   public function __construct($settings) {
-    // TODO: Implement connect() method.
+    $this->db = new \PDO("mysql:host={$settings['host']};dbmame={$settings['name']}", $settings['user'], $settings['pass']);
   }
 
   public function setTable($table) {
-    // TODO: Implement setTable() method.
+
+    return $this;
   }
 
   public function leftJoin($table, $alias) {
-    // TODO: Implement leftJoin() method.
+    return $this;
   }
 
   public function rightJoin($table, $alias) {
-    // TODO: Implement rightJoin() method.
+    return $this;
   }
 
   public function condition($field) {
-    // TODO: Implement condition() method.
+    return $this;
   }
 
   public function range($start, $end) {
-    // TODO: Implement range() method.
+    return $this;
   }
 
   public function execute() {
-    // TODO: Implement execute() method.
+    return $this;
   }
 
   public function tableExists($table) {
-    // TODO: Implement tableExists() method.
+    return $this;
   }
 }

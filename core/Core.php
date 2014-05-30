@@ -19,8 +19,20 @@ function __autoload($name) {
 
 class Core {
 
+  /**
+   * @var array
+   */
   protected $settings;
+
+  /**
+   * @var \Core\DataBase\DataBaseInterface;
+   */
   protected $db;
+
+  /**
+   * @var \Core\Entity\Entity;
+   */
+  protected $entity;
 
   public function __construct($path) {
 
@@ -33,6 +45,8 @@ class Core {
     // Connect to DB.
     $db = $this->settings['db'];
     $this->db = new $db['type']($db['info']);
+
+    $this->entity = new Core\Entity\Entity($this->db);
   }
 
   // All variables that used for settings will be store in static.
@@ -46,25 +60,20 @@ class Core {
   }
 
   /**
-   * @param $scope
-   *
-   * @return EntityInterface
+   * @return \Core\DataBase\DataBaseInterface
    */
-  public function registerEntity($scope) {
+  public function db() {
+    return $this->db;
   }
 
   /**
-   * @param $entity
-   *
-   * @return EntityInterface
+   * @return \Core\Entity\Entity
    */
-  public function getEntity($entity) {
+  public function entity() {
+    return $this->entity;
   }
 
-  public function entityExists() {
-  }
-
-  public function createField() {
-
+  public static function debug($debug) {
+    \Kint::dump($debug);
   }
 }
