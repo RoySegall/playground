@@ -89,4 +89,84 @@ class Core {
   public static function debug($debug) {
     \Kint::dump($debug);
   }
+
+  /**
+   * Check if the module exists.
+   *
+   * @param $name
+   *  Name of the module.
+   */
+  public function moduleExists($name) {
+  }
+
+  /**
+   * Enabling the module.
+   *
+   * @param $name
+   *  Name of the module.
+   */
+  public function moduleEnable($name) {
+  }
+
+  /**
+   * Installing a module.
+   *
+   * @param $name
+   *  Name of the module.
+   */
+  public function moduleInstall($name) {
+  }
+
+  /**
+   * Disable a module.
+   *
+   * @param $name
+   *  Name of the module.
+   */
+  public function moduleDisable($name) {
+  }
+
+  /**
+   * Get all the modules in the system.
+   */
+  public function getModules() {
+  }
+
+  /**
+   * Setting a cache.
+   */
+  public function cacheSet() {
+  }
+
+  /**
+   * Getting a cache from the cache handler.
+   */
+  public function cacheGet() {
+  }
+
+  /**
+   * Invalidate the cache using the cache handler.
+   */
+  public function cacheInvalidate() {
+  }
+
+  /**
+   * Triggering an element and retrieve information he supplied.
+   *
+   * @param $hook
+   *  Name of the hook.
+   */
+  public function trigger($hook) {
+  }
+
+  /**
+   * Altering a object.
+   *
+   * @param $hook
+   *  The name of the hook.
+   * @param $info
+   *  The information passing to the triggering altering handlers.
+   */
+  public function triggerAlter($hook, $info) {
+  }
 }

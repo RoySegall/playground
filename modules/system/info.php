@@ -1,11 +1,10 @@
 <?php
 
-namespace Modules\node;
+namespace Modules\system;
 
 use Core\Entity\EntityInfo;
 
 class info extends EntityInfo {
-  // todo: move to method for supporting multiple entities.
   public $label = 'Node';
   public $type = 'node';
   public $keys = array(
