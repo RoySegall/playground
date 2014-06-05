@@ -18,6 +18,7 @@ class Entity {
    * @param $scope
    */
   public function registerEntity($entity_type, $scope) {
+    // todo: Update code.
     $class = $scope . '\info';
     /** @var \Core\Entity\EntityInfo $entity_info */
     $entity_info = new $class;

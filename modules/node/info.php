@@ -1,40 +1,16 @@
 <?php
 
-namespace Modules\node;
+namespace Modules\node\Entity;
 
-use Core\Entity\EntityInfo;
+use Core\Entity\EntityDeclarations;
 
-class info extends EntityInfo {
-  // todo: move to method for supporting multiple entities.
-  public $label = 'Node';
-  public $type = 'node';
-  public $keys = array(
-    'id' => 'nid',
-    'label' => 'title'
+class Info extends EntityDeclarations {
+
+  public $nameSpaces = array(
+
+    'Modules\node\Entity' => array(
+      'Node',
+      'NodeType',
+    ),
   );
-  public $baseTable = 'node';
-  public $fieldable = TRUE;
-
-  public function schema() {
-    return array(
-      'nid' => array(
-        'type' => 'int',
-        'size' => '12',
-        'auto_increment' => TRUE,
-        'primary' => TRUE,
-      ),
-      'type' => array(
-        'type' => 'varchar',
-        'size' => '255',
-      ),
-      'created' => array(
-        'type' => 'int',
-        'size' => 12,
-      ),
-      'updated' => array(
-        'type' => 'int',
-        'size' => 12,
-      ),
-    );
-  }
 }
